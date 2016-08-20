@@ -1,4 +1,4 @@
--- @BCbot Copy By @jan_123 thanks to butler team
+
 HTTP = require('socket.http')
 HTTPS = require('ssl.https')
 ssl = require 'ssl'
@@ -8,9 +8,8 @@ serpent = require('serpent')
 ltn12 = require ('ltn12')
 json = (loadfile "./libs/JSON.lua")()
 version = 'beta'
-bot_api_key = 'token' -- set token
-bot_sudo = 228347356 -- set sudo
---functions
+bot_api_key = '257749284:AAEMpk9l8IQu9FrI9wEBIFLSdUAO06KlVdk'
+bot_sudo = 240616380
 function vardump(value)
   print(serpent.block(value, {comment=false}))
 end
