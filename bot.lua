@@ -103,13 +103,13 @@ api.sendMessage(msg.chat.id, 'Select *Barcode Algorithm:*', true, true,msg.messa
 db:hset('bot:waiting',msg.from.id,'brmain')
 elseif msg.text == 'Encode Hash' then
 local rw1_texts = {'🔲🔳\n🔳🔲'}
-local rw2_texts = {'Base 64','UmbH UmbH (Umbrella Hash)'}
+local rw2_texts = {'Base 64','UmbH UmbH (Barcod Hash)'}
 local rows ={kmakerow(rw1_texts),kmakerow(rw2_texts)}
 api.sendMessage(msg.chat.id, 'Select *Hash Algorithm:*', true, true,msg.message_id, true,kmake(rows))
 db:hset('bot:waiting',msg.from.id,'encode')
 elseif msg.text == 'Decode Hash' then
 local rw1_texts = {'🔲🔳\n🔳🔲'}
-local rw2_texts = {'Base 64','UmbH UmbH (Umbrella Hash)'}
+local rw2_texts = {'Base 64','UmbH UmbH (Barcod Hash)'}
 local rows ={kmakerow(rw1_texts),kmakerow(rw2_texts)}
 api.sendMessage(msg.chat.id, 'Select *Hash Algorithm:*', true, true,msg.message_id, true,kmake(rows))
 db:hset('bot:waiting',msg.from.id,'decode')
@@ -179,7 +179,7 @@ you have 2 algorithm for Decode Hash:
      `you can send About hash code for decode to utf-8 text`]]
 api.sendReply(msg, help, true)
 elseif msg.text == 'About' then
-local pms = [[*BarCodRobot* v1.0
+local pms = [[*BarCodRobot* _Version 1.0_
 
    _- Read QR Code_
    _- Make QR Code_
@@ -188,20 +188,14 @@ local pms = [[*BarCodRobot* v1.0
    _- Decode Hash Algorithms_
    _- & More..._
 
-*Created by *[Mohammad Developer](https://telegram.me/MohammadDeveloper)]]
+*Support Bot*[Mohammad Developer](https://telegram.me/MohammadDeveloper)]]
 local keyboard = {}
     keyboard.inline_keyboard = {
 {
-{text = "Admin" , url = 'https://telegram.me/MohammadDeveloper'}
+{text = "Admin Bot" , url = 'https://telegram.me/MohammadDeveloper'}
 },
 {
-{text = "RoBoT" , url = 'https://telegram.me/BarCodRobot'}
-},
-{
-{text = "Channel" , url = 'https://telegram.me/Botsunited'}
-},
-{
-{text = "Created" , url = 'https://Telegram.me/MohammadDeveloper'}
+{text = "Robot" , url = 'https://telegram.me/BarCodRobot'}
 }
 }
 api.sendMessage(msg.chat.id, pms, true, true,msg.message_id, true,keyboard)
@@ -214,7 +208,7 @@ local rows ={kmakerow(rw1_texts)}
 api.sendMessage(msg.chat.id, 'Send *Text:*', true, true,msg.message_id, true,kmake(rows))
 if msg.text == 'Base 64' then
 db:hset('bot:waiting',msg.from.id,'encodeb')
-elseif msg.text == 'UmbH UmbH (Umbrella Hash)' then
+elseif msg.text == 'UmbH UmbH (Barcod Hash)' then
 db:hset('bot:waiting',msg.from.id,'encodeu')
 else
 api.sendMessage(msg.chat.id, 'Input is *False*', true, true,msg.message_id, true)
@@ -234,7 +228,7 @@ local rows ={kmakerow(rw1_texts)}
 api.sendMessage(msg.chat.id, 'Send *Text:*', true, true,msg.message_id, true,kmake(rows))
 if msg.text == 'Base 64' then
 db:hset('bot:waiting',msg.from.id,'decodeb')
-elseif msg.text == 'UmbH UmbH (Umbrella Hash)' then
+elseif msg.text == 'UmbH UmbH (Barcod Hash)' then
 db:hset('bot:waiting',msg.from.id,'decodeu')
 else
 api.sendMessage(msg.chat.id, 'Input is *False*', true, true,msg.message_id, true)
