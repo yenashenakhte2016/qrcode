@@ -188,14 +188,17 @@ local pms = [[*BarCodRobot* _Version 1.0_
    _- Decode Hash Algorithms_
    _- & More..._
 
-*Support Bot*[Mohammad Developer](https://telegram.me/MohammadDeveloper)]]
+[Join Channel Bot](https://telegram.me/BotsUnited)]]
 local keyboard = {}
     keyboard.inline_keyboard = {
 {
-{text = "Admin Bot" , url = 'https://telegram.me/MohammadDeveloper'}
+{text = "Support Bot" , url = 'https://telegram.me/BuSupport'}
 },
 {
 {text = "Robot" , url = 'https://telegram.me/BarCodRobot'}
+},
+{
+{text = "Join Channel" , url = 'https://telegram.me/BotsUnited'}
 }
 }
 api.sendMessage(msg.chat.id, pms, true, true,msg.message_id, true,keyboard)
